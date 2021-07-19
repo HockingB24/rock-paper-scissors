@@ -46,7 +46,20 @@ h2 {
     color: white;
     font-weight: bold;
     position: relative;
+    transition: transform 0.15s ease;
 }
+
+.btn:hover {
+    cursor: grab;
+    /*transform: translate3d(0, -5px, 0);*/
+
+}
+
+.clicked {
+    transform: scale(0.95);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+  }
 
 .btn-text {
     position: absolute;
@@ -81,14 +94,24 @@ h2 {
     background-position:top;
 }
 
-.btn:hover {
-    cursor: grab;
-}
+
 
 
 #winner {
     font-size: 25px;
     font-weight: bold;
+}
+
+#reloader {
+    height: 60px;
+    width: 80px;
+    margin: auto;
+    font-size: 20px;
+    padding: 5px;
+    background-color: rgb(22, 134, 22);
+    color: white;
+    cursor: grab;
+
 }
 
 
@@ -97,5 +120,15 @@ h2 {
     .btn {
         height: 80px;
         width: 80px;
+        background-size: 5px 5px;
+    }
+    #rock {
+        background-size: 30px 40px;
+    }
+    #scissors {
+        background-size: 30px 40px;
+    }
+    #paper {
+        background-size: 30px 40px;
     }
   }
