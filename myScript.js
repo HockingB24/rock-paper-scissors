@@ -52,6 +52,8 @@ setScores = () => {
 
     if (playerScore >= 5 || computerScore >= 5) {
         winnerDisp.innerHTML = "The Winner Is: ";
+        reloadBtn.style.display = 'block';
+        reloadBtn.innerHTML = "Play Again!";
 
         if (playerScore > computerScore) {
             winnerDisp.innerHTML += "The Player!";
@@ -63,17 +65,37 @@ setScores = () => {
         rockBtn.removeEventListener('click', rockPaperScissors);
         paperBtn.removeEventListener('click', rockPaperScissors);
         scissorsBtn.removeEventListener('click', rockPaperScissors);
-
     }
 
 
 }
+
+function rise(e) {
+    this.classList.add('clicked');
+    this.addEventListener('transitionend', removeTransition);
+}
+
+function removeTransition(e) {
+    if(e.propertyName !== 'transform') return; //skip if not transform
+    this.classList.remove('clicked');
+}
+
 
 let currentp = document.querySelector("#current-player");
 let currentc = document.querySelector("#current-computer");
 let playerScoreDisp = document.querySelector("#p-score-number");
 let computerScoreDisp = document.querySelector("#c-score-number");
 let winnerDisp = document.querySelector('#winner');
+
+const reloadBtn = document.querySelector('#reloader');
+reloadBtn.style.display = 'none';
+
+reloadBtn.addEventListener('click', reload = () => {
+    location = location;
+});
+
+const btn = document.querySelectorAll('.btn');
+btn.forEach(btn => btn.addEventListener("click", rise));
 
 const rockBtn = document.querySelector('#rock');
 rockBtn.addEventListener('click', rockPaperScissors);
