@@ -30,7 +30,7 @@ rockPaperScissors = function(e) {
     }
     else if ((playerSelection === "rock" && computerSelection === "scissors") ||
             (playerSelection === "paper" && computerSelection === "rock") || 
-            (playerSelection === "scissors" && computerSelection === "rock")) {
+            (playerSelection === "scissors" && computerSelection === "paper")) {
 
         playerScore++;
         console.log('w');
